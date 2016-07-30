@@ -1,0 +1,2 @@
+class Got < ApplicationRecord
+end
