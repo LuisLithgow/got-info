@@ -10,7 +10,7 @@ $(document).ready(function() {
       .done( function(info){
         // console.log(info)
         info.forEach( function(data){
-          renderData(data)
+          // renderData(data)
           console.log(data)
           })
         })
@@ -30,7 +30,7 @@ $(document).ready(function() {
     $.getJSON("/got")
       .done(function(info) {
         info.map((data)=> {
-          console.log(data)
+          // console.log(data)
 
             let $li         = $('<li>')
             let $ul         = $('<ul>')
@@ -43,7 +43,7 @@ $(document).ready(function() {
             let $born = $('<li>').html("Born : " +data.born)
             let $died =$('<li>').html("Died : " +data.died)
             let $titles =$('<li>').html("Titles : " +data.titles)
-            let $aliases =$('<li>').html("ALiases : " +data.aliases)
+            let $aliases =$('<li>').html("Aliases : " +data.aliases)
             let $allegiances =$('<li>').html("Allegiances : " +data.allegiances)
             let $father =$('<li>').html("Father : " +data.father)
             let $mother =$('<li>').html("Mother : " +data.mother)
@@ -56,6 +56,8 @@ $(document).ready(function() {
             $div.append($deleteBtn)
             $dbContainer.append($div)
 
+            $(".delete-btn").on("click", deleteItem);
+
           })
         })
         .fail(function(error) {
@@ -64,6 +66,49 @@ $(document).ready(function() {
       }
     )
 
+
+  // POST data
+  function createCharacter(event) {
+    event.preventDefault();
+
+    let $children = $(event.target).children() ;
+    let data = {
+      name: $children.eq(0).val(),
+      gender: $children.eq(1).val(),
+      born: $children.eq(2).val(),
+      // died: $children.eq(3).val(),
+      titles: $children.eq(3).val(),
+      allegiances: $children.eq(4).val(),
+      aliases: $children.eq(5).val(),
+      father: $children.eq(6).val(),
+      mother: $children.eq(7).val(),
+      spuse: $children.eq(8).val()
+    }
+    $.post('/got', data)
+      .done( (response)=> {
+        console.log(response)
+      })
+      .fail( (error)=> {
+        console.log(error)
+      })
+  }
+  $('form').submit(createCharacter);
+
+
+  // DELETE from db
+  function deleteItem(e){
+    // e.stopPropagation()
+    console.log("Deletion clicked")
+    let url = $(e.target).attr('data-url');
+    $.ajax({
+      url: url,
+      method: 'delete'
+      })
+     .done(function(){
+       console.log(arguments);
+       $(e.target).parent().remove();
+     })
+  }
 
 
 
