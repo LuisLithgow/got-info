@@ -7,12 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Got.create({
+Got.create(
+  {
   :name=>"Lu Snow",
   :gender => "male",
   :born => "658 AC",
   :died => "",
-  :titles => ["The Grand One", "The All Powerful-Sword-Wielding Wizard"],
+  :titles => ["The Grand One","Sir Lu Snow", "The All Powerful-Sword-Wielding Wizard"],
   :aliases => "The Killer",
   :father => "LL",
   :mother => "AM",
@@ -20,4 +21,21 @@ Got.create({
   :allegiances => ["FSC", "GA"],
   :playedBy => ""
 
-  })
+  },
+  {
+  :name=>"Guillermo Lannister",
+  :gender => "male",
+  :born => "663 AC",
+  :died => "",
+  :titles => ["Sir Memo", "The King"],
+  :aliases => ["The CCC", "The One: Cool, Calm and Colelctive"],
+  :father => "LL",
+  :mother => "Sl",
+  :spouse => "",
+  :allegiances => ["FS", "DG"],
+  :playedBy => ""
+
+  }
+
+)
+
