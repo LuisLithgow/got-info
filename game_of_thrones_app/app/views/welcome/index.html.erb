@@ -1,14 +1,40 @@
 <div class="container">
 
-  <h1>Got#index</h1>
-  <p>Find me in app/views/got/index.html.erb</p>
-  <h1>this is got index</h1>
+  <header>
+    <h1>GoT</h1>
+    <form >
+      <h3>Add to GoT world </h3>
+      <input type="text" class="name" placeholder="Name">
+      <input type="text" class="gender" placeholder="Gender">
+      <input type="text" class="born" placeholder="When were you born?">
+      <input type="text" class="titles" placeholder="Do you have any Titles?">
+      <input type="text" class="allegiances" placeholder="Any allegiances?">
+      <input type="text" class="aliases" placeholder="Aliases">
+      <input type="text" class="father" placeholder="Father">
+      <input type="text" class="mother" placeholder="Mother">
+      <input type="text" class="spouse" placeholder="Spouse">
+      <input type="submit">
+    </form>
 
-  <input type="text" class="user-input">
+  </header>
+  <br>
+  <br>
 
-  <div class="info"></div>
-  <button class="api-data"> Get API data</button>
-  <button class="db-data">Get DB data</button>
+
+  <div class="col-md-6">
+    <h3>Search the world of GoT</h3>
+    <input type="text" class="user-input">
+
+    <div class="info"></div>
+    <button class="api-data btn btn-default"> GoT info</button>
+
+  </div>
+
+  <div class="col-md-6">
+    <h3>What's in our database</h3>
+    <button class="db-data btn btn-default">What do we have so far</button>
+    <div class="db-container"></div>
+  </div>
 
 
 
