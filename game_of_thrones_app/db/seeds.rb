@@ -21,8 +21,9 @@ Got.create(
   :allegiances => ["FSC", "GA"],
   :playedBy => ""
 
-  },
-  {
+  })
+
+Got.create({
   :name=>"Guillermo Lannister",
   :gender => "male",
   :born => "663 AC",
@@ -35,7 +36,5 @@ Got.create(
   :allegiances => ["FS", "DG"],
   :playedBy => ""
 
-  }
-
-)
+  })
 
