@@ -118,9 +118,9 @@ $(document).ready(function() {
       .done( (response)=> {
         console.log(response)
       })
-      .fail( (error)=> {
-        console.log(error)
-      })
+      // .fail( (error)=> {
+      //   console.log(error)
+      // })
   }
 
   $('.create-form').submit(createCharacter);
