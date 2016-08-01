@@ -1,19 +1,54 @@
 <div class="container">
 
   <header>
-    <h1>GoT</h1>
-      <h3>Add to GoT world </h3>
-    <form >
-      <input type="text" class="name" placeholder="Name">
-      <input type="text" class="gender" placeholder="Gender">
-      <input type="text" class="born" placeholder="When were you born?">
-      <input type="text" class="titles" placeholder="Do you have any Titles?">
-      <input type="text" class="allegiances" placeholder="Any allegiances?">
-      <input type="text" class="aliases" placeholder="Aliases">
-      <input type="text" class="father" placeholder="Father">
-      <input type="text" class="mother" placeholder="Mother">
-      <input type="text" class="spouse" placeholder="Spouse">
-      <input type="submit" value="SUBMIT">
+    <h1 class="text-center">Game of Thrones Info-Center</h1>
+      <!-- Bootstrap Modal -->
+    <div class="container xmodal">
+      <h2>Top Characters</h2>
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-info btn-modal" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Characters</h4>
+            </div>
+            <div class="modal-body">
+              <ul class="char-list"></ul>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div> <!--end of MODAL -->
+
+
+      <h3 class="text-center">Add to the Game of Thrones World </h3>
+
+    <form class="form-inline create-form"  >
+      <div class="form-group">
+        <input type="text" class="name form-control inline" placeholder="Name">
+        <input type="text" class="gender form-control inline" placeholder="Gender">
+        <input type="text" class="born form-control inline" placeholder="When were you born?">
+        <input type="text" class="titles form-control inline" placeholder="Do you have any Titles?">
+        <input type="text" class="allegiances form-control inline" placeholder="Any allegiances?">
+        <input type="text" class="aliases form-control inline" placeholder="Aliases">
+        <input type="text" class="father form-control inline" placeholder="Father">
+        <input type="text" class="mother form-control inline" placeholder="Mother">
+        <input type="text" class="spouse form-control inline" placeholder="Spouse">
+        <!-- <input type="text" class="playedBy form-control inline" placeholder="Played By"> -->
+        <input type="submit" value="SUBMIT" class="btn btn-default">
+      </div>
     </form>
 
   </header>
@@ -22,11 +57,19 @@
 
 
   <div class="col-md-6">
-    <h3>Search the world of GoT</h3>
-    <input type="text" class="user-input">
+    <!-- <form> -->
+      <h3>Search the world of GoT</h3>
+      <!-- <h5>Type in full name</h5> -->
+      <form class="form-inline create-form" >
+      <input type="text" class="user-input form-control inline" placeholder="Full name of character">
+      <br/>
 
-    <div class="info"></div>
-    <button class="api-data btn btn-default"> GoT info</button>
+      <br/>
+      <button class="api-data btn btn-default"> GoT info</button>
+      </form>
+    <!-- </form> -->
+    <br/>
+    <div class="fire-ice-container"></div>
 
   </div>
 
@@ -36,8 +79,9 @@
     <div class="db-container"></div>
   </div>
 
-
-
+  <footer>
+    <!-- copyright 2016 -->
+  </footer>
 
 
 
