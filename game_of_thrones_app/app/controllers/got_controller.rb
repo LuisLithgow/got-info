@@ -17,7 +17,8 @@ class GotController < ApplicationController
   end
 
   def create
-    character = {name:params[:name], gender: params[:gender], born: params[:born], titles: params[:titles], allegiances: params[:allegiances], aliases: params[:aliases], father: params[:father], mother: params[:mother], spouse: params[:spouse], playedBy: params[:playedBy] }
+    puts params
+    character = {name:params[:name], gender: params[:gender], born: params[:born], titles: params[:titles], allegiances: params[:allegiances], aliases: params[:aliases], father: params[:father], mother: params[:mother], spouse: params[:spouse] }
     Got.create character
     render :json=>Got.last
   end

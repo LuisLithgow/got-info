@@ -19,27 +19,26 @@ $(document).ready(function() {
           let $ul         = $('<ul>')
           let $div        = $('<div>')
           let $addBtn  =$('<button>').attr({
-            "data-url":'/got'+data.id}).addClass("add-btn btn btn-default").text("Add character " + data.name)
+            "data-url":'/got'}).addClass("add-btn btn btn-default").text("Add character " + data.name)
 
-          let $name =$('<li>').html("Name : " +data.name)
-          let $gender =$('<li>').html("Gender : " +data.gender)
-          let $born = $('<li>').html("Born : " +data.born)
-          let $died =$('<li>').html("Died : " +data.died)
-          let $titles =$('<li>').html("Titles : " +data.titles)
-          let $aliases =$('<li>').html("Aliases : " +data.aliases)
-          let $allegiances =$('<li>').html("Allegiances : " +data.allegiances)
-          let $father =$('<li>').html("Father : " +data.father)
-          let $mother =$('<li>').html("Mother : " +data.mother)
-          let $spouse =$('<li>').html("Spouse : " +data.spouse)
-          let $playedBy =$('<li>').html("Played By : " +data.playedBy)
+          let $name =$('<li id="name">').html("Name : " +data.name)
+          let $gender =$('<li id="gender">').html("Gender : " +data.gender)
+          let $born = $('<li id="born">').html("Born : " +data.born)
+          let $died =$('<li id="died">').html("Died : " +data.died)
+          let $titles =$('<li id="titles">').html("Titles : " +data.titles)
+          let $aliases =$('<li id="aliases">').html("Aliases : " +data.aliases)
+          let $allegiances =$('<li id="allegiances">').html("Allegiances : " +data.allegiances)
+          let $father =$('<li id="father">').html("Father : " +data.father)
+          let $mother =$('<li id="mother">').html("Mother : " +data.mother)
+          let $spouse =$('<li id="spouse">').html("Spouse : " +data.spouse)
+          let $playedBy =$('<li id="playedBy">').html("Played By : " +data.playedBy)
 
           $ul.append($name, $gender, $born, $died,$titles, $aliases, $allegiances, $father, $mother, $spouse,$playedBy)
-          $ul.append($born)
           $div.append($ul)
           $div.append($addBtn)
           $fireIceContainer.append($div)
 
-          $(".add-btn").on("click", createCharacter);
+          $(".add-btn").on("click", addtoDB);
         })
       })
       .fail((error)=> {
@@ -48,6 +47,34 @@ $(document).ready(function() {
       }
     )
 
+  function addtoDB(event) {
+    event.preventDefault();
+
+    let $children = $(event.target).children() ;
+    console.log($children)
+    console.log($children.eq(0).val() )
+    let data = {
+      name: $children.eq(0).val(),
+      gender: $children.eq(1).val(),
+      born: $children.eq(2).val(),
+      // died: $children.eq(3).val(),
+      titles: $children.eq(3).val(),
+      allegiances: $children.eq(4).val(),
+      aliases: $children.eq(5).val(),
+      father: $children.eq(6).val(),
+      mother: $children.eq(7).val(),
+      spouse: $children.eq(8).val(),
+      // playedBy: $children.eq(9).val()
+    }
+    $.post('/got', data)
+      .done( (response)=> {
+        console.log("data object from main js",data)
+        console.log(response)
+      })
+      // .fail( (error)=> {
+      //   console.log(error)
+      // })
+  }
 
 
 // GETing data from my psql database
@@ -60,7 +87,6 @@ $(document).ready(function() {
       .done(function(info) {
         info.map((data)=> {
           // console.log(data)
-
 
             let $li         = $('<li>')
             let $ul         = $('<ul>')
@@ -81,7 +107,6 @@ $(document).ready(function() {
             let $playedBy =$('<li>').html("Played By : " +data.playedBy)
 
             $ul.append($name, $gender, $born, $died,$titles, $aliases, $allegiances, $father, $mother, $spouse,$playedBy)
-            $ul.append($born)
             $div.append($ul)
             $div.append($deleteBtn)
             $dbContainer.append($div)
@@ -96,26 +121,29 @@ $(document).ready(function() {
     )
 
 
-  // POST data
+  // POST data(s)
   function createCharacter(event) {
     event.preventDefault();
 
     let $children = $(event.target).children() ;
+    console.log($children)
+    console.log($children.eq(0).val() )
     let data = {
       name: $children.eq(0).val(),
       gender: $children.eq(1).val(),
       born: $children.eq(2).val(),
-      died: $children.eq(3).val(),
-      titles: $children.eq(4).val(),
-      allegiances: $children.eq(5).val(),
-      aliases: $children.eq(6).val(),
-      father: $children.eq(7).val(),
-      mother: $children.eq(8).val(),
-      spuse: $children.eq(9).val(),
-      playedBy: $children.eq(10).val()
+      // died: $children.eq(3).val(),
+      titles: $children.eq(3).val(),
+      allegiances: $children.eq(4).val(),
+      aliases: $children.eq(5).val(),
+      father: $children.eq(6).val(),
+      mother: $children.eq(7).val(),
+      spouse: $children.eq(8).val(),
+      // playedBy: $children.eq(9).val()
     }
     $.post('/got', data)
       .done( (response)=> {
+        console.log(data)
         console.log(response)
       })
       // .fail( (error)=> {
