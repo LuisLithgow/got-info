@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("FULLY LOADED!!!")
+  console.log("FULLY fucntionally LOADED!!!")
 
   // Get Fire and Ice API data
   $(".api-data").on('click',function getApiData(event){
