@@ -21,6 +21,7 @@ $(document).ready(function() {
           let $addBtn  =$('<button>').attr({
             "data-url":'/got'}).addClass("add-btn btn btn-default").text("Add character " + data.name)
 
+
           let $name =$('<li id="name">').html("Name : " +data.name)
           let $gender =$('<li id="gender">').html("Gender : " +data.gender)
           let $born = $('<li id="born">').html("Born : " +data.born)
