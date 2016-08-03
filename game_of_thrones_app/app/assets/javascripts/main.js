@@ -207,5 +207,17 @@ $(document).ready(function() {
 
 
 
+// $(document).on('turbolinks:load', function() {
+// //copy paste jquery code here
+//   getApiData
+//   getDBData
+//   addtoDB
+//   charList
+//   deleteItem
+//   createCharacter
+
+// });
+
+
 
 })
