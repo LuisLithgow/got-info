@@ -7,7 +7,7 @@ $(document).ready(function() {
     let $fireIceContainer = $(".fire-ice-container")
 
     let userInput = $(".user-input").val()
-    let url = "http://www.anapioficeandfire.com/api/characters?name=" + userInput
+    let url = "https://www.anapioficeandfire.com/api/characters?name=" + userInput
     $.get(url )
       // console.log(userInput)
       .done( function(info){
