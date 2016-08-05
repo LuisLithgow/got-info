@@ -19,7 +19,9 @@ User will be able to create a special GoT character and add it the GoT world.
 ### Technologies Used 
 Built on Ruby on Rails with heavy use of JavaScript, PostgresSQL for the database and styled with Bootstrap, along with adding my own styling flair. 
 
-All Game of Thrones data was pulled from the "Fire and Ice API".
 
+-----
+
+All Game of Thrones data was pulled from the "Fire and Ice API".
 
 This is not affiliated with Game of Thrones, HBO or George R.R. Martin.
