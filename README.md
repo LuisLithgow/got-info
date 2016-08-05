@@ -25,3 +25,5 @@ Built on Ruby on Rails with heavy use of JavaScript, PostgresSQL for the databas
 All Game of Thrones data was pulled from the "Fire and Ice API".
 
 This is not affiliated with Game of Thrones, HBO or George R.R. Martin.
+
+check it out at https://got-info.herokuapp.com/
